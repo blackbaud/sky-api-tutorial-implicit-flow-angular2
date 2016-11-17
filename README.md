@@ -1,4 +1,4 @@
-# skyux2-starter
+# sky-api-tutorial-implicit-flow-angular2
 
 ```
 npm install
