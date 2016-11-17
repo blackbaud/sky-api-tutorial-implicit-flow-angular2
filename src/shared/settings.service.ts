@@ -15,8 +15,8 @@ export class SettingsService {
     return this.http
         .get('/data/config.json')
         .map(response => {
-            console.log('response', response);
-            return response.json();
+            this.settings = response.json();
+            return this.settings;
         })
         .toPromise();
   }

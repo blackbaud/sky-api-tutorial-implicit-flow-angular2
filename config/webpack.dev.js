@@ -14,7 +14,7 @@ module.exports = webpackMerge(commonConfig, {
 
   devServer: {
     historyApiFallback: true,
-    contentBase: helpers.root('src')
+    contentBase: 'src'
   },
 
   output: {

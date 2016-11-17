@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const helpers = require('./helpers');
 
 module.exports = {
@@ -78,13 +77,6 @@ module.exports = {
       // Where to insert script and link tags:
       new HtmlWebpackPlugin({
         template: 'src/index.html'
-      }),
-
-      // Copy config file to the build
-      new CopyWebpackPlugin([
-        { from: 'src/data/config.json', to: helpers.root('dist') }
-      ],{
-        copyUnmodified: true
       })
     ],
 
