@@ -1,0 +1,12 @@
+{
+  "curly": true,
+  "devel": ["console"],
+  "eqeqeq": true,
+  "esversion": 6,
+  "expr": true,
+  "forin": true,
+  "node": true,
+  "predef": [],
+  "undef": true,
+  "unused": true
+}

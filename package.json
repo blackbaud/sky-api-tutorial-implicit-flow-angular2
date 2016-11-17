@@ -1,0 +1,47 @@
+{
+  "name": "skyux2-starter",
+  "version": "0.0.1",
+  "description": "SKY UX 2 Starter Application",
+  "repository": "https://github.com/blackbaud-stevebrush/skyux2-starter.git",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail",
+    "build:dev": "webpack --config config/webpack.dev.js --progress --profile",
+    "lint": "tslint 'src/**/*.ts'",
+    "start": "webpack-dev-server --config config/webpack.dev.js --progress --profile --watch"
+  },
+  "dependencies": {
+    "@angular/common": "2.1.2",
+    "@angular/compiler": "2.1.2",
+    "@angular/core": "2.1.2",
+    "@angular/forms": "2.1.2",
+    "@angular/http": "2.1.2",
+    "@angular/platform-browser": "2.1.2",
+    "@angular/platform-browser-dynamic": "2.1.2",
+    "@angular/router": "3.1.2",
+    "core-js": "2.4.1",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "0.6.26"
+  },
+  "devDependencies": {
+    "@types/core-js": "0.9.34",
+    "@types/node": "6.0.45",
+    "angular2-router-loader": "0.3.4",
+    "angular2-template-loader": "0.6.0",
+    "awesome-typescript-loader": "2.2.4",
+    "blackbaud-skyux2": "2.0.0-alpha.13",
+    "css-loader": "0.25.0",
+    "extract-text-webpack-plugin": "2.0.0-beta.4",
+    "html-webpack-plugin": "2.24.0",
+    "node-sass": "3.10.1",
+    "raw-loader": "0.5.1",
+    "rimraf": "^2.5.4",
+    "sass-loader": "4.0.2",
+    "style-loader": "0.13.1",
+    "tslint": "3.15.1",
+    "typescript": "2.0.6",
+    "webpack": "2.1.0-beta.27",
+    "webpack-dev-server": "2.1.0-beta.11",
+    "webpack-merge": "0.15.0"
+  }
+}
