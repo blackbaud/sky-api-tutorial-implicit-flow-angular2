@@ -2,14 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
-
 @Component({
   selector: 'my-app',
-  template: require('./app.component.html'),
-  providers: [
-    SessionService,
-    SettingsService
-  ]
+  template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
   constructor(
@@ -20,9 +15,7 @@ export class AppComponent implements OnInit {
 
   public ngOnInit(): void {
     this.setTitle('My App');
-    this.settingsService.getConfigFile().then((data: any) => {
-        this.sessionService.login();
-    });
+    this.settingsService.getConfigFile();
   }
 
   public setTitle(title: string): void {

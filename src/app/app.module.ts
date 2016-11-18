@@ -1,13 +1,24 @@
+//Angular Modules
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { SkyModule } from 'blackbaud-skyux2/dist/core';
 import { HttpModule } from '@angular/http';
+
+//Libraries
+import { SkyModule } from 'blackbaud-skyux2/dist/core';
+
+
+// Local Services
 import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
 import { AppRoutingModule } from '../shared/app-routing.module';
-import { HomeComponent } from '../home/home.component';
-import { TokenComponent } from '../token/token.component';
+import { ConstituentService } from '../shared/constituent.service';
+
+// Local Components
+import { AppComponent } from './app.component';
+import { HomeComponent } from '../components/home/home.component';
+import { TokenComponent } from '../components/token/token.component';
+import { LoginComponent } from '../components/login/login.component';
+import { ConstituentComponent } from '../components/constituent/constituent.component';
 
 @NgModule({
   imports: [
@@ -19,10 +30,13 @@ import { TokenComponent } from '../token/token.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    TokenComponent
+    TokenComponent,
+    ConstituentComponent,
+    LoginComponent
   ],
   bootstrap: [AppComponent],
   providers: [
+    ConstituentService,
     SessionService,
     SettingsService,
     Title
