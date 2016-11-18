@@ -26,7 +26,7 @@ export class ConstituentComponent {
   }
 
   private handleError(error: any): void {
-    console.log(error.message || error);
+    console.log('ERROR:', error.message || error);
     Promise.resolve(error);
   }
 }
