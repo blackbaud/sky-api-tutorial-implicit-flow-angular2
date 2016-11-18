@@ -14,7 +14,7 @@ export class SettingsService {
 
   public getConfigFile() {
     if (this.settings) {
-      return this.settings;
+      return Promise.resolve(this.settings);
     } else {
       return this.http
         .get('/data/config.json')
