@@ -18,14 +18,14 @@ export class AppComponent implements OnInit {
     private settingsService: SettingsService
   ) { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.setTitle('My App');
     this.settingsService.getConfigFile().then((data: any) => {
         this.sessionService.login();
     });
   }
 
-  setTitle(title: string): void {
+  public setTitle(title: string): void {
     this.titleService.setTitle(title);
   }
 }
