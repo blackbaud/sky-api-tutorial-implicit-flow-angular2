@@ -18,6 +18,9 @@ export class SessionService {
     return JSON.parse(sessionStorage.getItem('token')).access_token;
   }
   setToken(obj: Object) {
+    if (obj === undefined) {
+      sessionStorage.removeItem('token');
+    }
     sessionStorage.setItem('token', JSON.stringify(obj));
   }
   login() {

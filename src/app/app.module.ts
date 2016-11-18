@@ -5,14 +5,20 @@ import { SkyModule } from 'blackbaud-skyux2/dist/core';
 import { HttpModule } from '@angular/http';
 import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
+import { AppRoutingModule } from '../shared/app-routing.module';
+import { TokenComponent } from '../token/token.component';
 
 @NgModule({
   imports: [
+    AppRoutingModule,
     BrowserModule,
     HttpModule,
     SkyModule
   ],
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    TokenComponent
+  ],
   bootstrap: [AppComponent],
   providers: [
     SessionService,

@@ -18,6 +18,9 @@ export class SettingsService {
             this.settings = response.json();
             return this.settings;
         })
-        .toPromise();
+        .toPromise()
+        .catch((error) => {
+          console.log('ERROR:', error);
+        });
   }
 }
