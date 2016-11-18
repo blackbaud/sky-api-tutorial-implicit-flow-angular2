@@ -14,12 +14,12 @@ import { Location } from '@angular/common';
 export class TokenComponent implements OnInit {
   constructor(
     private location: Location,
-    private hash: String = location.path().substr(1),
-    private hashArray: Array<String> = hash.split('&'),
-    private hashPairs: Object = {},
     private router: Router,
     private sessionService: SessionService
   ) { }
+  private hash: String = this.location.path().substr(1);
+  private hashArray: Array<String> = this.hash.split('&');
+  private hashPairs: Object = {};
 
   ngOnInit() {
     this.hashArray.forEach((hash) => {
