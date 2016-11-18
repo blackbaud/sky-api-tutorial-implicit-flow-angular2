@@ -13,7 +13,7 @@ export class TokenComponent implements OnInit {
     private router: Router,
     private sessionService: SessionService
   ) { }
-  private hash: String = this.location.path().substr(1);
+  private hash: String = this.location.path();
   private hashArray: Array<String> = this.hash.split('&');
   private hashPairs: Object = {};
 
@@ -22,8 +22,12 @@ export class TokenComponent implements OnInit {
       let obj = hash.split('=');
       this.hashPairs[obj[0]] = obj[1];
     });
+    console.log('hash', this.hash);
+    console.log('hashArray', this.hashArray);
+    console.log('hashPairs', this.hashPairs);
 
     this.sessionService.setToken(this.hashPairs);
+    console.log(this.sessionService.getAccessToken())
     this.router.navigate(['/home']);
   }
 }
