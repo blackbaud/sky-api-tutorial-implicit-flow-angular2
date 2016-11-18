@@ -6,11 +6,6 @@ import { Location } from '@angular/common';
 @Component ({
   selector: 'token',
   template: require('./token.component.html'),
-  providers: [
-    Location,
-    Router,
-    SessionService
-  ]
 })
 export class TokenComponent implements OnInit {
   constructor(
@@ -22,13 +17,13 @@ export class TokenComponent implements OnInit {
   private hashArray: Array<String> = this.hash.split('&');
   private hashPairs: Object = {};
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.hashArray.forEach((hash) => {
       let obj = hash.split('=');
       this.hashPairs[obj[0]] = obj[1];
     });
-
+    console.log("HERE!!!");
     this.sessionService.setToken(this.hashPairs);
-    this.router.navigate(['/home']);
+    setTimeout(this.router.navigate(['/home']), 2000);
   }
 }

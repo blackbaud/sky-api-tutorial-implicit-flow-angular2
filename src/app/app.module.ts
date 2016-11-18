@@ -7,7 +7,7 @@ import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
 import { AppRoutingModule } from '../shared/app-routing.module';
 import { HomeComponent } from '../home/home.component';
-// import { TokenComponent } from '../token/token.component';
+import { TokenComponent } from '../token/token.component';
 
 @NgModule({
   imports: [
@@ -18,8 +18,8 @@ import { HomeComponent } from '../home/home.component';
   ],
   declarations: [
     AppComponent,
-    HomeComponent
-    // TokenComponent
+    HomeComponent,
+    TokenComponent
   ],
   bootstrap: [AppComponent],
   providers: [
