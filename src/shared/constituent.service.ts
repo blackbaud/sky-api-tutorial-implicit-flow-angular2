@@ -9,7 +9,6 @@ import { SettingsService } from './settings.service';
 @Injectable()
 export class ConstituentService {
   private url : string = 'https://api.sky.blackbaud.com/constituent/v1/constituents/';
-  private constituent: any;
   constructor(private http: Http, private sessionService: SessionService, private settingsService: SettingsService) {}
 
   public getById(id: number) {
@@ -23,8 +22,7 @@ export class ConstituentService {
       return this.http
           .get(this.url + id, options)
           .toPromise()
-          .then((data: any) => { this.constituent = JSON.parse(data._body)
-            console.log(this.constituent);
+          .then((data: any) => { return JSON.parse(data._body)
           })
           .catch(this.handleError);
     } else {

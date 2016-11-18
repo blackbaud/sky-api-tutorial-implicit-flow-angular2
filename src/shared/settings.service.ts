@@ -5,17 +5,13 @@ import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class SettingsService {
-  public settings: Object;
+  private settings: Object;
   constructor(private http: Http) {}
 
   public get(key: string) {
-    if (!this.settings) {
-      return this.getConfigFile()
-        .then(() => this.settings[key] || false)
-    }
     return this.settings[key] || false;
   }
-
+  
   public getConfigFile() {
     return this.http
         .get('/data/config.json')

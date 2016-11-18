@@ -20,7 +20,7 @@ export class ConstituentComponent {
   ngOnInit(): void {
     this.constituentService.getById(this.constituent_id)
         .then((res: any )=> {
-          this.constituent_data = res.data
+          this.constituent_data = res;
         })
         .catch(this.handleError)
   }
