@@ -7,6 +7,7 @@ import { Location } from '@angular/common';
   selector: 'token',
   template: require('./token.component.html'),
   providers: [
+    Location,
     Router,
     SessionService
   ]

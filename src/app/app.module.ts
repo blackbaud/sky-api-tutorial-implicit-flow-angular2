@@ -6,7 +6,8 @@ import { HttpModule } from '@angular/http';
 import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
 import { AppRoutingModule } from '../shared/app-routing.module';
-import { TokenComponent } from '../token/token.component';
+import { HomeComponent } from '../home/home.component';
+// import { TokenComponent } from '../token/token.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { TokenComponent } from '../token/token.component';
   ],
   declarations: [
     AppComponent,
-    TokenComponent
+    HomeComponent
+    // TokenComponent
   ],
   bootstrap: [AppComponent],
   providers: [
