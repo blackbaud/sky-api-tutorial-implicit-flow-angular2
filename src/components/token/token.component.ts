@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SessionService } from '../../shared/session.service';
+import { SettingsService } from '../../shared/settings.service';
 import { Location } from '@angular/common';
 
 import 'rxjs/add/operator/switchMap';
@@ -14,6 +15,7 @@ export class TokenComponent implements OnInit {
     private location: Location,
     private route: ActivatedRoute,
     private router: Router,
+    private settingsService: SettingsService,
     private sessionService: SessionService
   ) { }
   private hash: String;
@@ -30,6 +32,8 @@ export class TokenComponent implements OnInit {
     });
 
     this.sessionService.setToken(this.hashPairs);
-    this.router.navigate(['/constituent-data']);
+    this.settingsService.getConfigFile().then(() => {
+      this.router.navigate(['/constituent-data']);
+    });
   }
 }

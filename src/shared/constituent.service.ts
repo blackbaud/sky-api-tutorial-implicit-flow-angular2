@@ -9,12 +9,16 @@ import { SettingsService } from './settings.service';
 @Injectable()
 export class ConstituentService {
   private url : string = 'https://api.sky.blackbaud.com/constituent/v1/constituents/';
-  constructor(private http: Http, private sessionService: SessionService, private settingsService: SettingsService) {}
+  constructor(
+    private http: Http,
+    private sessionService: SessionService,
+    private settingsService: SettingsService
+  ) { }
 
   public getById(id: number) {
     let headers = new Headers(
     {
-      'bb-api-subscription-key': "a49d639fd78b4478a26ab677c14878fa",
+      'bb-api-subscription-key': this.settingsService.get("SkyApiSubscriptionKey"),
       'Authorization': 'Bearer ' + this.sessionService.getAccessToken()
     })
     let options = new RequestOptions({headers: headers});
@@ -28,7 +32,6 @@ export class ConstituentService {
     } else {
       return Promise.reject({});
     }
-
   }
 
   private handleError(error: any) {

@@ -11,9 +11,12 @@ export class SettingsService {
   public get(key: string) {
     return this.settings[key] || false;
   }
-  
+
   public getConfigFile() {
-    return this.http
+    if (this.settings) {
+      return this.settings;
+    } else {
+      return this.http
         .get('/data/config.json')
         .map(response => {
             this.settings = response.json();
@@ -23,5 +26,6 @@ export class SettingsService {
         .catch((error) => {
           console.log('ERROR:', error);
         });
+    }
   }
 }
