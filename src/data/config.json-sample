@@ -1,5 +1,5 @@
 {
   "SkyApiSubscriptionKey": "",
   "SkyApiAppId": "",
-  "AuthRedirectUri": "http://localhost:8000/"
+  "AuthRedirectUri": "http://localhost:8080/access_token"
 }

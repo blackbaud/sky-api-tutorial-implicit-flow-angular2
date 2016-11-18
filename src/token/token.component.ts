@@ -4,13 +4,8 @@ import { SessionService } from '../shared/session.service';
 import { Location } from '@angular/common';
 
 @Component ({
-  selector: 'token',
-  template: require('./token.component.html'),
-  providers: [
-    Location,
-    Router,
-    SessionService
-  ]
+  selector: 'auth-token',
+  template: require('./token.component.html')
 })
 export class TokenComponent implements OnInit {
   constructor(
@@ -22,7 +17,7 @@ export class TokenComponent implements OnInit {
   private hashArray: Array<String> = this.hash.split('&');
   private hashPairs: Object = {};
 
-  ngOnInit() {
+  public ngOnInit(): void {
     this.hashArray.forEach((hash) => {
       let obj = hash.split('=');
       this.hashPairs[obj[0]] = obj[1];

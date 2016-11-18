@@ -6,7 +6,7 @@ import { TokenComponent } from '../token/token.component';
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'access_token=:accessToken', component: TokenComponent },
+  { path: 'access_token', component: TokenComponent },
   { path: '**', redirectTo: '/home' }
 ];
 
