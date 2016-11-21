@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ConstituentService } from '../../shared/constituent.service';
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'constituent',
@@ -9,19 +10,34 @@ import { ConstituentService } from '../../shared/constituent.service';
 })
 export class ConstituentComponent {
   private constituent_id: number = 280;
-  protected constituent_data: any;
+
+  public constituent_data: any = {};
+
+  public showImage = true;
+
+  public showTitle = true;
+
+  public showSubtitle = true;
+
+  public showContent = true;
+
+  public showKeyInfo = true;
 
   constructor(
+
     private constituentService: ConstituentService,
+
     private router: Router
   ) {}
 
+  getData(): void {
+      this.constituentService.getById(this.constituent_id)
+          .then(data => this.constituent_data = data)
+
+  };
+
   ngOnInit(): void {
-    this.constituentService.getById(this.constituent_id)
-        .then((res: any )=> {
-          this.constituent_data = res;
-        })
-        .catch(this.handleError)
+    this.getData();
   }
 
   private handleError(error: any): void {

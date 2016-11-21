@@ -2,9 +2,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 //Libraries
 import { SkyModule } from 'blackbaud-skyux2/dist/core';
+import 'rxjs/add/operator/toPromise';
 
 
 // Local Services
@@ -25,7 +27,8 @@ import { ConstituentComponent } from '../components/constituent/constituent.comp
     AppRoutingModule,
     BrowserModule,
     HttpModule,
-    SkyModule
+    SkyModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
