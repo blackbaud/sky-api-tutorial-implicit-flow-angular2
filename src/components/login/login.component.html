@@ -1,1 +1,2 @@
-<button class="sky-btn sky-btn-primary" (click)='Login()'>Login</button>
+<button *ngIf="!loggedIn()" class="sky-btn sky-btn-primary" (click)='login()'>Login</button>
+<button *ngIf="loggedIn()" class="sky-btn sky-btn-primary" (click)='logout()'>Logout</button>

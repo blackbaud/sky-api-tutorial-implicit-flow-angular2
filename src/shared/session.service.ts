@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { SettingsService } from './settings.service';
 
 @Injectable()
 export class SessionService {
-  constructor(private settingsService: SettingsService) {}
+  constructor(private settingsService: SettingsService, private router: Router) {}
   public isAuthenticated() {
     try {
       if (this.getAccessToken()) {
@@ -33,7 +34,7 @@ export class SessionService {
   }
   public logout() {
     this.setToken(undefined);
-    // router goes here $location.path('/');
+    this.router.navigate(['/home']);
     window.location.reload();
   }
 }

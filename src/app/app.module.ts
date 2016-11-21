@@ -13,7 +13,6 @@ import 'rxjs/add/operator/toPromise';
 import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
 import { AppRoutingModule } from '../shared/app-routing.module';
-import { ConstituentService } from '../shared/constituent.service';
 
 // Local Components
 import { AppComponent } from './app.component';
@@ -39,7 +38,6 @@ import { ConstituentComponent } from '../components/constituent/constituent.comp
   ],
   bootstrap: [AppComponent],
   providers: [
-    ConstituentService,
     SessionService,
     SettingsService,
     Title

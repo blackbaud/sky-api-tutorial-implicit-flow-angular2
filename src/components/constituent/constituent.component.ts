@@ -2,16 +2,18 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ConstituentService } from '../../shared/constituent.service';
+
 import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'constituent',
-  template: require('./constituent.component.html')
+  template: require('./constituent.component.html'),
+  providers: [ConstituentService]
 })
-export class ConstituentComponent {
+export class ConstituentComponent implements OnInit {
   private constituent_id: number = 280;
 
-  public constituent_data: any = {};
+  public constituent: any;
 
   public showImage = true;
 
@@ -32,8 +34,7 @@ export class ConstituentComponent {
 
   getData(): void {
       this.constituentService.getById(this.constituent_id)
-          .then(data => this.constituent_data = data)
-
+          .then(data => this.constituent = data)
   };
 
   ngOnInit(): void {

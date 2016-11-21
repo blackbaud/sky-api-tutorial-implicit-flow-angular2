@@ -10,7 +10,15 @@ export class LoginComponent {
     private sessionService: SessionService
   ) {}
 
-  private Login(): void {
+  private loggedIn(): boolean {
+      return this.sessionService.isAuthenticated();
+  }
+
+  private login(): void {
     this.sessionService.login();
+  }
+
+  private logout(): void {
+    this.sessionService.logout();
   }
 }
