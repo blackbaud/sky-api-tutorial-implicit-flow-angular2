@@ -2,9 +2,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule, Title } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 
 //Libraries
 import { SkyModule } from 'blackbaud-skyux2/dist/core';
+import 'rxjs/add/operator/toPromise';
 
 
 // Local Services
@@ -15,23 +17,24 @@ import { AppRoutingModule } from '../shared/app-routing.module';
 // Local Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from '../components/home/home.component';
-import { TokenComponent } from '../components/token/token.component';
-import { LoginComponent } from '../components/login/login.component';
 import { ConstituentComponent } from '../components/constituent/constituent.component';
+import { LoginComponent } from '../components/login/login.component';
+import { TokenComponent } from '../components/token/token.component';
 
 @NgModule({
   imports: [
     AppRoutingModule,
     BrowserModule,
     HttpModule,
-    SkyModule
+    SkyModule,
+    FormsModule
   ],
   declarations: [
     AppComponent,
-    HomeComponent,
-    TokenComponent,
     ConstituentComponent,
-    LoginComponent
+    HomeComponent,
+    LoginComponent,
+    TokenComponent
   ],
   bootstrap: [AppComponent],
   providers: [

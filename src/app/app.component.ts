@@ -12,10 +12,13 @@ export class AppComponent implements OnInit {
     private sessionService: SessionService,
     private settingsService: SettingsService
   ) { }
+  isReady: Boolean = false;
 
   public ngOnInit(): void {
     this.setTitle('My App');
-    this.settingsService.getConfigFile();
+    this.settingsService.getConfigFile().then(() => {
+      this.isReady = true;
+    });
   }
 
   public setTitle(title: string): void {

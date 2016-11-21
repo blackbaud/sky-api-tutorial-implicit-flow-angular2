@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { SettingsService } from './settings.service';
 import { Router } from '@angular/router';
+import { SettingsService } from './settings.service';
 
 @Injectable()
 export class SessionService {

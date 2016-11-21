@@ -32,7 +32,7 @@ export class TokenComponent implements OnInit {
 
     this.sessionService.setToken(this.hashPairs);
     this.settingsService.getConfigFile().then(() => {
-      this.router.navigate(['/constituent-data']);
+      this.router.navigate(['/']);
     });
   }
 }

@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { ConstituentService } from './constituent.service';
 import { SessionService } from '../../shared/session.service';
 
+import 'rxjs/add/operator/toPromise';
+
 @Component({
   selector: 'constituent',
   template: require('./constituent.component.html'),
@@ -16,15 +18,15 @@ export class ConstituentComponent implements OnInit {
   constructor(
     private constituentService: ConstituentService,
     private sessionService: SessionService,
-    private router: Router
   ) {}
 
-  ngOnInit(): void {
+  getData(): void {
     this.constituentService.getById(this.constituent_id)
-      .then((res: any )=> {
-        this.constituent = res;
-      })
-      .catch(this.handleError)
+      .then((data:any) => this.constituent = data);
+  };
+
+  ngOnInit(): void {
+    this.getData();
   }
 
   logout(): void {

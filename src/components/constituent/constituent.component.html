@@ -1,38 +1,31 @@
-<button class="btn btn-primary" (click)="logout()">Logout</button>
-<sky-card>
-  <sky-card-title >{{constituent?.name}}</sky-card-title>
-  <sky-card-content>
-    <div class="table-responsive">
-      <table class="table table-striped table-hover">
-        <thead>
-          <tr>
-            <th>Key</th>
-            <th>Value</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>id</td>
-            <td>{{ constituent?.id }}</td>
-          </tr>
-          <tr>
-            <td>type</td>
-            <td>{{ constituent?.type }}</td>
-          </tr>
-          <tr>
-            <td>lookup_id</td>
-            <td>{{ constituent?.lookup_id }}</td>
-          </tr>
-          <tr>
-            <td>first</td>
-            <td>{{ constituent?.first }}</td>
-          </tr>
-          <tr>
-            <td>last</td>
-            <td>{{ constituent?.last }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </sky-card-content>
-</sky-card>
+<sky-page-summary>
+  <sky-page-summary-image>
+    <sky-avatar [name]="constituent?.name"></sky-avatar>
+  </sky-page-summary-image>
+  <sky-page-summary-title>
+      {{constituent?.name}}
+  </sky-page-summary-title>
+  <sky-page-summary-subtitle>
+    <span>ID: </span>{{constituent?.id}}
+  </sky-page-summary-subtitle>
+  <sky-page-summary-content>
+    <p  class="well" >
+      See <a href="https://developer.sky.blackbaud.com/constituent-entity-reference#Constituent" target="_blank">Constituent</a>
+      within the Blackbaud SKY API contact reference for a full listing of properties.
+    </p>
+  </sky-page-summary-content>
+  <sky-page-summary-key-info>
+    <sky-key-info>
+      <sky-key-info-label>Type</sky-key-info-label>
+      <sky-key-info-value>{{ constituent?.type }}</sky-key-info-value>
+    </sky-key-info>
+    <sky-key-info>
+      <sky-key-info-label>lookup_id</sky-key-info-label>
+      <sky-key-info-value>{{ constituent?.lookup_id }}</sky-key-info-value>
+    </sky-key-info>
+    <sky-key-info>
+      <sky-key-info-label>Type</sky-key-info-label>
+      <sky-key-info-value>{{ constituent?.type }}</sky-key-info-value>
+    </sky-key-info>
+  </sky-page-summary-key-info>
+</sky-page-summary>
