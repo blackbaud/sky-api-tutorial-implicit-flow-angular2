@@ -3,8 +3,8 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
-import { SessionService } from './session.service';
-import { SettingsService } from './settings.service';
+import { SessionService } from '../../shared/session.service';
+import { SettingsService } from '../../shared/settings.service';
 
 @Injectable()
 export class ConstituentService {

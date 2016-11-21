@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
 import { SessionService } from '../../shared/session.service';
 import { SettingsService } from '../../shared/settings.service';
 import { Location } from '@angular/common';
@@ -13,7 +13,6 @@ import 'rxjs/add/operator/switchMap';
 export class TokenComponent implements OnInit {
   constructor(
     private location: Location,
-    private route: ActivatedRoute,
     private router: Router,
     private settingsService: SettingsService,
     private sessionService: SessionService

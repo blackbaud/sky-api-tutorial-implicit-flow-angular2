@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { ConstituentService } from '../../shared/constituent.service';
+import { ConstituentService } from './constituent.service';
+import { SessionService } from '../../shared/session.service';
 
 @Component({
   selector: 'constituent',
@@ -14,6 +15,7 @@ export class ConstituentComponent implements OnInit {
 
   constructor(
     private constituentService: ConstituentService,
+    private sessionService: SessionService,
     private router: Router
   ) {}
 
@@ -23,6 +25,10 @@ export class ConstituentComponent implements OnInit {
         this.constituent = res;
       })
       .catch(this.handleError)
+  }
+
+  logout(): void {
+    this.sessionService.logout();
   }
 
   private handleError(error: any): void {

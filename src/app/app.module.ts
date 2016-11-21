@@ -11,7 +11,6 @@ import { SkyModule } from 'blackbaud-skyux2/dist/core';
 import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
 import { AppRoutingModule } from '../shared/app-routing.module';
-import { ConstituentService } from '../shared/constituent.service';
 
 // Local Components
 import { AppComponent } from './app.component';
