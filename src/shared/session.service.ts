@@ -14,15 +14,17 @@ export class SessionService {
     }
   }
   public getAccessToken() {
-    return JSON.parse(sessionStorage.getItem('token')).access_token;
+    return JSON.parse(window.sessionStorage.getItem('token')).access_token;
   }
+
   public setToken(obj: Object) {
     if (obj === undefined) {
-      sessionStorage.removeItem('token');
+      window.sessionStorage.removeItem('token');
     }
-    sessionStorage.setItem('token', JSON.stringify(obj));
+    window.sessionStorage.setItem('token', JSON.stringify(obj));
   }
-  public login() {
+
+  public login(): void {
     this.setToken(undefined);
     window.location.href = `https://oauth2.sky.blackbaud.com/authorization?client_id=
     ${this.settingsService.get('SkyApiAppId')}

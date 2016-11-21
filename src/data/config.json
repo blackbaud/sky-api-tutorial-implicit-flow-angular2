@@ -1,5 +1,5 @@
 {
-  "SkyApiSubscriptionKey": "9ac3864d94e646e9b9996320ff20071e",
-  "SkyApiAppId": "c009bf1c-8858-4a73-9ce6-29a940bcff76",
-  "AuthRedirectUri": "http://localhost:8080/access_token"
+  "SkyApiSubscriptionKey": "a49d639fd78b4478a26ab677c14878fa",
+  "SkyApiAppId": "8d07c5b4-d614-4633-82d8-4743011b2a17",
+  "AuthRedirectUri": "http://localhost:8080/access_token/"
 }
