@@ -1,6 +1,6 @@
 //Angular Modules
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
@@ -37,7 +37,8 @@ import { TokenComponent } from '../components/token/token.component';
   bootstrap: [AppComponent],
   providers: [
     SessionService,
-    SettingsService
+    SettingsService,
+    Title
   ]
 })
 export class AppModule { }
