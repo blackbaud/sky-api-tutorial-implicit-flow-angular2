@@ -36,7 +36,6 @@ import { ConstituentComponent } from '../components/constituent/constituent.comp
   ],
   bootstrap: [AppComponent],
   providers: [
-    ConstituentService,
     SessionService,
     SettingsService,
     Title

@@ -1,6 +1,35 @@
-<div>
-  <h1></h1>
-  <pre>
-    {{constituent_data | json}}
-  </pre>
-</div>
+<sky-card>
+  <sky-card-title >{{constituent?.name}}</sky-card-title>
+  <sky-card-content>
+    <div>
+      <sky-key-info [layout]="layout">
+        <sky-key-info-label>id</sky-key-info-label>
+        <sky-key-info-value>{{ constituent?.id }}</sky-key-info-value>
+      </sky-key-info>
+    </div>
+    <div>
+    <sky-key-info [layout]="layout">
+      <sky-key-info-label>type</sky-key-info-label>
+      <sky-key-info-value>{{ constituent?.type }}</sky-key-info-value>
+    </sky-key-info>
+    </div>
+    <div>
+    <sky-key-info [layout]="layout">
+      <sky-key-info-label>lookup_id</sky-key-info-label>
+      <sky-key-info-value>{{ constituent?.lookup_id }}</sky-key-info-value>
+    </sky-key-info>
+    </div>
+    <div>
+    <sky-key-info [layout]="layout">
+      <sky-key-info-label>first</sky-key-info-label>
+      <sky-key-info-value>{{ constituent?.first }}</sky-key-info-value>
+    </sky-key-info>
+    </div>
+    <div>
+    <sky-key-info [layout]="layout">
+      <sky-key-info-label>last</sky-key-info-label>
+      <sky-key-info-value>{{ constituent?.last }}</sky-key-info-value>
+    </sky-key-info>
+    </div>
+  </sky-card-content>
+</sky-card>

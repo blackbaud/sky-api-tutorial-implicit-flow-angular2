@@ -5,11 +5,13 @@ import { ConstituentService } from '../../shared/constituent.service';
 
 @Component({
   selector: 'constituent',
-  template: require('./constituent.component.html')
+  template: require('./constituent.component.html'),
+  providers: [ConstituentService]
 })
-export class ConstituentComponent {
+export class ConstituentComponent implements OnInit {
   private constituent_id: number = 280;
-  protected constituent_data: any;
+  public constituent: any;
+  public layout: String = "horizontal";
 
   constructor(
     private constituentService: ConstituentService,
@@ -18,10 +20,11 @@ export class ConstituentComponent {
 
   ngOnInit(): void {
     this.constituentService.getById(this.constituent_id)
-        .then((res: any )=> {
-          this.constituent_data = res;
-        })
-        .catch(this.handleError)
+      .then((res: any )=> {
+        console.log('res', res);
+        this.constituent = res;
+      })
+      .catch(this.handleError)
   }
 
   private handleError(error: any): void {

@@ -24,18 +24,17 @@ export class ConstituentService {
     let options = new RequestOptions({headers: headers});
     if(this.sessionService.isAuthenticated()) {
       return this.http
-          .get(this.url + id, options)
-          .toPromise()
-          .then((data: any) => { return JSON.parse(data._body)
-          })
-          .catch(this.handleError);
+        .get(this.url + id, options)
+        .toPromise()
+        .then((data: any) => { return JSON.parse(data._body) })
+        .catch(this.handleError);
     } else {
       return Promise.reject({});
     }
   }
 
   private handleError(error: any) {
-      console.log(error.message || error);
-      return Promise.reject(error);
+    console.log(error.message || error);
+    return Promise.reject(error);
   }
 }
