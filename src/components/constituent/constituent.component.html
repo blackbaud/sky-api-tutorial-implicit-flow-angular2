@@ -1,35 +1,37 @@
 <sky-card>
   <sky-card-title >{{constituent?.name}}</sky-card-title>
   <sky-card-content>
-    <div>
-      <sky-key-info [layout]="layout">
-        <sky-key-info-label>id</sky-key-info-label>
-        <sky-key-info-value>{{ constituent?.id }}</sky-key-info-value>
-      </sky-key-info>
-    </div>
-    <div>
-    <sky-key-info [layout]="layout">
-      <sky-key-info-label>type</sky-key-info-label>
-      <sky-key-info-value>{{ constituent?.type }}</sky-key-info-value>
-    </sky-key-info>
-    </div>
-    <div>
-    <sky-key-info [layout]="layout">
-      <sky-key-info-label>lookup_id</sky-key-info-label>
-      <sky-key-info-value>{{ constituent?.lookup_id }}</sky-key-info-value>
-    </sky-key-info>
-    </div>
-    <div>
-    <sky-key-info [layout]="layout">
-      <sky-key-info-label>first</sky-key-info-label>
-      <sky-key-info-value>{{ constituent?.first }}</sky-key-info-value>
-    </sky-key-info>
-    </div>
-    <div>
-    <sky-key-info [layout]="layout">
-      <sky-key-info-label>last</sky-key-info-label>
-      <sky-key-info-value>{{ constituent?.last }}</sky-key-info-value>
-    </sky-key-info>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Key</th>
+            <th>Value</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>id</td>
+            <td>{{ constituent?.id }}</td>
+          </tr>
+          <tr>
+            <td>type</td>
+            <td>{{ constituent?.type }}</td>
+          </tr>
+          <tr>
+            <td>lookup_id</td>
+            <td>{{ constituent?.lookup_id }}</td>
+          </tr>
+          <tr>
+            <td>first</td>
+            <td>{{ constituent?.first }}</td>
+          </tr>
+          <tr>
+            <td>last</td>
+            <td>{{ constituent?.last }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </sky-card-content>
 </sky-card>

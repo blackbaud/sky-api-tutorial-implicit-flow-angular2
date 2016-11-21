@@ -11,7 +11,6 @@ import { ConstituentService } from '../../shared/constituent.service';
 export class ConstituentComponent implements OnInit {
   private constituent_id: number = 280;
   public constituent: any;
-  public layout: String = "horizontal";
 
   constructor(
     private constituentService: ConstituentService,
@@ -21,7 +20,6 @@ export class ConstituentComponent implements OnInit {
   ngOnInit(): void {
     this.constituentService.getById(this.constituent_id)
       .then((res: any )=> {
-        console.log('res', res);
         this.constituent = res;
       })
       .catch(this.handleError)
