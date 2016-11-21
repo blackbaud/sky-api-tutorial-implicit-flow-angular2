@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   isReady: Boolean = false;
 
   public ngOnInit(): void {
-    this.setTitle('My App');
+    this.setTitle('Implicit Flow Tutorial');
     this.settingsService.getConfigFile().then(() => {
       this.isReady = true;
     });

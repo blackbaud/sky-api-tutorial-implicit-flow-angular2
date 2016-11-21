@@ -6,8 +6,6 @@ import { FormsModule } from '@angular/forms';
 
 //Libraries
 import { SkyModule } from 'blackbaud-skyux2/dist/core';
-import 'rxjs/add/operator/toPromise';
-
 
 // Local Services
 import { SessionService } from '../shared/session.service';

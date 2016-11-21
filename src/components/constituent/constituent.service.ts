@@ -8,7 +8,7 @@ import { SettingsService } from '../../shared/settings.service';
 
 @Injectable()
 export class ConstituentService {
-  private url : string = 'https://api.sky.blackbaud.com/constituent/v1/constituents/';
+  private url: string = 'https://api.sky.blackbaud.com/constituent/v1/constituents/';
 
   constructor(private http: Http, private sessionService: SessionService, private settingsService: SettingsService) {}
 
@@ -19,6 +19,7 @@ export class ConstituentService {
       'bb-api-subscription-key': "a49d639fd78b4478a26ab677c14878fa",
       'Authorization': 'Bearer ' + this.sessionService.getAccessToken()
     })
+
     let options = new RequestOptions({headers: headers});
 
     if(this.sessionService.isAuthenticated()){

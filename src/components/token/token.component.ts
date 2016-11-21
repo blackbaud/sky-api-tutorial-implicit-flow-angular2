@@ -11,15 +11,17 @@ import 'rxjs/add/operator/switchMap';
   template: ''
 })
 export class TokenComponent implements OnInit {
+
+  private hash: String;
+  private hashArray: Array<String>;
+  private hashPairs: Object = {};
+
   constructor(
     private location: Location,
     private router: Router,
     private settingsService: SettingsService,
     private sessionService: SessionService
   ) { }
-  private hash: String;
-  private hashArray: Array<String>;
-  private hashPairs: Object = {};
 
   public ngOnInit(): void {
     this.hash = window.location.hash.substr(1);
