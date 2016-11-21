@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import { ConstituentService } from './constituent.service';
 import { SessionService } from '../../shared/session.service';
 
-import 'rxjs/add/operator/toPromise';
-
 @Component({
   selector: 'constituent',
   template: require('./constituent.component.html'),
