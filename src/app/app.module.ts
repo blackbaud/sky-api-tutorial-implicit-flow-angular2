@@ -1,13 +1,11 @@
 //Angular Modules
 import { NgModule } from '@angular/core';
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
 
 //Libraries
 import { SkyModule } from 'blackbaud-skyux2/dist/core';
-import 'rxjs/add/operator/toPromise';
-
 
 // Local Services
 import { SessionService } from '../shared/session.service';
@@ -39,8 +37,7 @@ import { TokenComponent } from '../components/token/token.component';
   bootstrap: [AppComponent],
   providers: [
     SessionService,
-    SettingsService,
-    Title
+    SettingsService
   ]
 })
 export class AppModule { }

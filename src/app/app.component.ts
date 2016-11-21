@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Title } from '@angular/platform-browser';
 import { SettingsService } from '../shared/settings.service';
 
 @Component({
@@ -8,19 +7,13 @@ import { SettingsService } from '../shared/settings.service';
 })
 export class AppComponent implements OnInit {
   constructor(
-    private titleService: Title,
     private settingsService: SettingsService
   ) { }
   isReady: Boolean = false;
 
   public ngOnInit(): void {
-    this.setTitle('My App');
     this.settingsService.getConfigFile().then(() => {
       this.isReady = true;
     });
-  }
-
-  public setTitle(title: string): void {
-    this.titleService.setTitle(title);
   }
 }
