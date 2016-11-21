@@ -8,7 +8,7 @@ import 'rxjs/add/operator/switchMap';
 
 @Component ({
   selector: 'auth-token',
-  template: require('./token.component.html')
+  template: ''
 })
 export class TokenComponent implements OnInit {
   constructor(
