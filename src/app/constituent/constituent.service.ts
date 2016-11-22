@@ -27,7 +27,7 @@ export class ConstituentService {
     if (this.sessionService.isAuthenticated()) {
       return this.http.get(this.url + id, options)
         .toPromise()
-        .then(data => data.json()._body)
+        .then((data: any) => JSON.parse(data._body))
         .catch(this.handleError);
     } else {
       return Promise.reject({});
