@@ -14,10 +14,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 // Local Components
 import { AppComponent } from './app.component';
-import { HomeComponent } from '../components/home/home.component';
-import { ConstituentComponent } from '../components/constituent/constituent.component';
-import { LoginComponent } from '../components/login/login.component';
-import { TokenComponent } from '../components/token/token.component';
+import { HomeComponent } from './home/home.component';
+import { ConstituentComponent } from './constituent/constituent.component';
+import { LoginComponent } from './login/login.component';
+import { TokenComponent } from './token/token.component';
 
 @NgModule({
   imports: [
