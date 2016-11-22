@@ -4,8 +4,6 @@ import { SessionService } from '../../shared/session.service';
 import { SettingsService } from '../../shared/settings.service';
 import { Location } from '@angular/common';
 
-import 'rxjs/add/operator/switchMap';
-
 @Component ({
   selector: 'auth-token',
   template: ''

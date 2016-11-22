@@ -18,16 +18,16 @@ export class ConstituentComponent implements OnInit {
     private sessionService: SessionService,
   ) {}
 
-  getData(): void {
+  public getData(): void {
     this.constituentService.getById(this.constituent_id)
-      .then((data:any) => this.constituent = data);
+      .then((data: any) => this.constituent = data);
   };
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.getData();
   }
 
-  logout(): void {
+  public logout(): void {
     this.sessionService.logout();
   }
 

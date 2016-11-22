@@ -10,23 +10,24 @@ import { SettingsService } from '../../shared/settings.service';
 export class ConstituentService {
   private url: string = 'https://api.sky.blackbaud.com/constituent/v1/constituents/';
 
-  constructor(private http: Http, private sessionService: SessionService, private settingsService: SettingsService) {}
+  constructor(
+    private http: Http,
+    private sessionService: SessionService,
+    private settingsService: SettingsService) { }
 
   public getById(id: number): Promise<any> {
 
-    let headers = new Headers(
-    {
+    let headers = new Headers({
       'bb-api-subscription-key': "a49d639fd78b4478a26ab677c14878fa",
       'Authorization': 'Bearer ' + this.sessionService.getAccessToken()
-    })
+    });
 
-    let options = new RequestOptions({headers: headers});
+    let options = new RequestOptions({ headers: headers });
 
-    if(this.sessionService.isAuthenticated()){
-      return this.http
-        .get(this.url + id, options)
+    if (this.sessionService.isAuthenticated()) {
+      return this.http.get(this.url + id, options)
         .toPromise()
-        .then((data: any) => { return JSON.parse(data._body) })
+        .then(data => data.json()._body)
         .catch(this.handleError);
     } else {
       return Promise.reject({});
