@@ -13,7 +13,8 @@ module.exports = webpackMerge(commonConfig, {
   devtool: 'cheap-module-eval-source-map',
 
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    contentBase: 'src'
   },
 
   output: {

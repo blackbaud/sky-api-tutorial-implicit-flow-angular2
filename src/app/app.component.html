@@ -1,7 +1,5 @@
-<h1>SKY UX 2 Demo Application</h1>
-<p>This app demonstrates how to consume SKY UX 2 components.</p>
-
-<h2>Alerts</h2>
-<sky-alert [alertType]="'info'" [closeable]="true">
-  Info alert
-</sky-alert>
+<div *ngIf="isReady">
+  <h1>SKY Api Implicit Flow Tutorial</h1>
+  <p>This app demonstrates how to authenticate with implicit flow in Angular 2.</p>
+</div>
+<router-outlet></router-outlet>

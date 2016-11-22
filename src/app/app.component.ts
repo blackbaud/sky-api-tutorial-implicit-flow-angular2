@@ -1,18 +1,26 @@
 import { Component, OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { SettingsService } from '../shared/settings.service';
 
 @Component({
   selector: 'my-app',
   template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
-  constructor(private titleService: Title) { }
+  public isReady: Boolean = false;
 
-  ngOnInit(): void {
-    this.setTitle('My App');
+  constructor(
+    private titleService: Title,
+    private settingsService: SettingsService) { }
+
+  public ngOnInit(): void {
+    this.setTitle('Implicit Flow Tutorial');
+    this.settingsService.getConfigFile().then(() => {
+      this.isReady = true;
+    });
   }
 
-  setTitle(title: string): void {
+  public setTitle(title: string): void {
     this.titleService.setTitle(title);
   }
 }
