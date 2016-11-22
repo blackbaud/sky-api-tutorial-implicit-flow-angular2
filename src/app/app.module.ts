@@ -10,7 +10,7 @@ import { SkyModule } from 'blackbaud-skyux2/dist/core';
 // Local Services
 import { SessionService } from '../shared/session.service';
 import { SettingsService } from '../shared/settings.service';
-import { AppRoutingModule } from '../shared/app-routing.module';
+import { AppRoutingModule } from './app-routing.module';
 
 // Local Components
 import { AppComponent } from './app.component';

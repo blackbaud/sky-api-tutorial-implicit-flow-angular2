@@ -7,11 +7,11 @@ import { SettingsService } from '../shared/settings.service';
   template: require('./app.component.html')
 })
 export class AppComponent implements OnInit {
+  public isReady: Boolean = false;
+
   constructor(
     private titleService: Title,
-    private settingsService: SettingsService
-  ) { }
-  isReady: Boolean = false;
+    private settingsService: SettingsService) { }
 
   public ngOnInit(): void {
     this.setTitle('Implicit Flow Tutorial');
