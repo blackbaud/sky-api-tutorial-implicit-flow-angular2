@@ -5,7 +5,6 @@ import { SettingsService } from '../../shared/settings.service';
 import { Location } from '@angular/common';
 
 @Component ({
-  selector: 'auth-token',
   template: ''
 })
 export class TokenComponent implements OnInit {
