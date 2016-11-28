@@ -19,6 +19,9 @@ import { ConstituentComponent } from './constituent/constituent.component';
 import { LoginComponent } from './login/login.component';
 import { TokenComponent } from './token/token.component';
 
+/**
+* Register our core app module, and load in our other components, providers (services), and dependencies.
+*/
 @NgModule({
   imports: [
     AppRoutingModule,
