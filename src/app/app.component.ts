@@ -15,10 +15,11 @@ import { SettingsService } from '../shared/settings.service';
 })
 
 /**
-*  create and export the class for this component.   The custom methods and properties of this
+*  Creates and exports the class constructor for this component.   The custom methods and properties of this
 *  component are defined and used here.  When creating our class we can extend other classes, gaining
 *  access to their methods and properties, or we can implement an interface, instructing out app to define
-*  specific methods or properties.
+*  specific methods or properties.  In this case we implement the OnInit interface, telling our class it will
+*  need to define an ngOnInit method.
 */
 export class AppComponent implements OnInit {
 
@@ -40,6 +41,12 @@ export class AppComponent implements OnInit {
   */
   public ngOnInit(): void {
     this.setTitle('SKY API Implicit Flow Tutorial - Angular 2');
+
+    /**
+    *  Everytime we load the home page, we make sure to grab and set our settings config file before we try to load
+    *  any content.   This ensures we have all the config variables we need when making requests or performing
+    *  authorization checks before rendering our views.   
+    */
     this.settingsService.getConfigFile().then(() => {
       this.isReady = true;
     });
