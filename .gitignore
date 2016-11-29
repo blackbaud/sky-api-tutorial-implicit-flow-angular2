@@ -18,3 +18,4 @@ _temp
 !typings/typings.d.ts
 !wallaby.js
 src/data/config.json
+.vscode

@@ -4,14 +4,14 @@ import { SettingsService } from './settings.service';
 import { Token } from './token.interface';
 
 /**
-*  The Injectable decorator provides the meta data for our exported SessionService
-*  class to allow Angular 2 to recognize this as a service / provider that other components
-*  and modules will make use of.
+*  The Injectable decorator provides the metadata for our exported SessionService
+*  class so Angular 2 recognizes this as a service / provider that other components
+*  and modules use.
 */
 @Injectable()
 
 /**
-*  Create a router and settingsService our SessionService class can make use of.
+*  Inject the router and settingsService dependencies for our SessionService to use.
 */
 export class SessionService {
   constructor(
@@ -20,8 +20,8 @@ export class SessionService {
   ) {}
 
   /**
-  *  Checks and parses the sessionStorage of our window object for a token.  Then returns either the found
-  *  access token, or an empty string.
+  *  Checks and parses the sessionStorage of our window object for a token. Then returns either the found
+  *  access token or an empty string.
   */
   public getAccessToken(): string {
     let response = JSON.parse(window.sessionStorage.getItem('token')) as any;
@@ -29,8 +29,8 @@ export class SessionService {
   }
 
   /**
-  *  This method checks for the existance of an access Token.    It returns a boolean value.   Access Tokens
-  *  are provided from the authentication flow.  When users successfully log in, they are provided an access token.
+  *  This method checks for the existence of an access token and returns a boolean value.
+  *  When users successfully log in, they are provided an access token.
   */
   public isAuthenticated(): boolean {
     try {
@@ -44,8 +44,8 @@ export class SessionService {
 
   /**
   *  Calls the setToken method with no parameters to clear out any existing `token` that may be in sessionStorage already.
-  *  Next we set the windows location to our Blackbaud authorization url, and pull in the `SkyApiAppId` and `AuthRedirectUri`
-  *  variables we set in our config file.   This redirects the browser to the authorization location and upon success it
+  *  Next we set the window's location to our Blackbaud authorization url and pull in the `SkyApiAppId` and `AuthRedirectUri`
+  *  variables we set in our config file. This redirects the browser to the authorization location and upon success it
   *  redirects the browser back to the specified `AuthRedirectUri`.
   */
   public login(): void {
@@ -57,8 +57,7 @@ export class SessionService {
   }
 
   /**
-  *  Calls the setToken method with no parameters to clear out any active `Token` that may be in sessionStorage.  Makes use
-  *  of the router we created in our constructor function to navigate the browser to `/home` before we call for the window
+  *  Makes use of the router we created in our constructor function to navigate the browser to `/home` before we call for the window
   *  to perform a refresh/reload to clear out any cached data that may still be hanging around.
   */
   public logout() {
@@ -68,9 +67,9 @@ export class SessionService {
   }
 
   /**
-  *  setToken takes an optional (?) obj parameter.   If no parameter is provided, it will remove any `token` that may
-  *  be existing in the sessionStorage.   If a valid token is provided, it will stringify the token object, and save it
-  *  in the windows sessionStorage.
+  *  setToken takes an optional (?) obj parameter. If no parameter is provided, it will remove any `token` that may
+  *  be in the sessionStorage. If a valid token is provided, it will stringify the token object and save it
+  *  in the window's sessionStorage.
   */
   public setToken(obj?: Object) {
     if (!obj) {

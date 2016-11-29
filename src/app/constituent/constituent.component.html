@@ -6,7 +6,7 @@
   <sky-page-summary-title>
       <!--
         We make use of the Elvis Operator `?`, to tell Angular that this value may not exist yet when rendering the view.
-        When dealing with promises, or other dealyed means of fetching and assigning data, angular 2 doesn't allow us to block
+        When dealing with asynchronous data, Angular 2 doesn't allow us to block
         the view from rendering and will result in an error without this conditional operator.
        -->
       {{constituent?.name}}

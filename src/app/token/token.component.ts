@@ -23,7 +23,7 @@ export class TokenComponent implements OnInit {
   public ngOnInit(): void {
     /**
     *  After the user grants (or denies) authorization to use their authenticated Blackbaud data, the authorization endpoint
-    *  will redirect the browser back to the `AuthRedirectUri` we specified in our `config.json` file.  If the user granted
+    *  will redirect the browser back to the `AuthRedirectUri` we specified in our `config.json` file. If the user granted
     *  permission, the URL will contain a fragment with several fields we store as part of our token.
     *  [access_token, token_type, expires_in, state, tenant_id, tenant_name].
     */
@@ -33,15 +33,15 @@ export class TokenComponent implements OnInit {
     this.hashArray.forEach((hash) => {
       let obj = hash.split('=');
       /**
-      *  Because we split the URL fragment by `&` each hash in the hashArray will need to be split and assigned to an object.
+      *  Because we split the URL fragment by `&`, each hash in the hashArray will need to be split and assigned to an object.
       *  We split each hash string by the `=` taking each pair and assigning them as part of the hashPairs object.
       *  (eg. 'access_token=1234', becomes ['access_token', '1234']).
       */
       this.hashPairs[obj[0]] = obj[1];
     });
     /**
-    *  Pass the hashPairs object to our sessionService to set the token in window sessionStorage to use later in our API requests.
-    *  then redirects the browser back to the home page.
+    *  Pass the hashPairs object to our sessionService to set the token in sessionStorage to use later in our API requests.
+    *  Then redirects the browser back to the home page.
     */
     this.sessionService.setToken(this.hashPairs);
     this.settingsService.getConfigFile().then(() => {
