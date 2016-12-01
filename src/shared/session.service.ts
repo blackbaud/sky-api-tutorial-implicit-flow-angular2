@@ -4,15 +4,10 @@ import { SettingsService } from './settings.service';
 import { Token } from './token.interface';
 
 /**
-*  The Injectable decorator provides the metadata for our exported SessionService
-*  class so Angular 2 recognizes this as a service / provider that other components
-*  and modules use.
-*/
+ *  The Injectable decorator provides the metadata for the SessionService so Angular 2 recognizes this 
+ *  as a service / provider that other components and modules use.
+ */
 @Injectable()
-
-/**
-*  Inject the router and settingsService dependencies for our SessionService to use.
-*/
 export class SessionService {
   constructor(
     private router: Router,
@@ -20,18 +15,17 @@ export class SessionService {
   ) {}
 
   /**
-  *  Checks and parses the sessionStorage of our window object for a token. Then returns either the found
-  *  access token or an empty string.
-  */
+   *  Checks and parses the window's sessionStorage object for a token and returns either the found
+   *  access token or an empty string.
+   */
   public getAccessToken(): string {
     let response = JSON.parse(window.sessionStorage.getItem('token')) as any;
     return response.access_token || "";
   }
 
   /**
-  *  This method checks for the existence of an access token and returns a boolean value.
-  *  When users successfully log in, they are provided an access token.
-  */
+   *  Checks for the existence of an access token and returns a boolean value.
+   */
   public isAuthenticated(): boolean {
     try {
       if (this.getAccessToken() !== "") {
@@ -43,11 +37,11 @@ export class SessionService {
   }
 
   /**
-  *  Calls the setToken method with no parameters to clear out any existing `token` that may be in sessionStorage already.
-  *  Next we set the window's location to our Blackbaud authorization url and pull in the `SkyApiAppId` and `AuthRedirectUri`
-  *  variables we set in our config file. This redirects the browser to the authorization location and upon success it
-  *  redirects the browser back to the specified `AuthRedirectUri`.
-  */
+   *  Calls the setToken method with no parameters to clear out any existing `token` that may be in sessionStorage already.
+   *  Next it sets the window's location to the Blackbaud authorization url and fetches in the `SkyApiAppId` and `AuthRedirectUri`
+   *  variables set in the config file. The browser is redirected to the authorization location and upon success is
+   *  redirected to the specified `AuthRedirectUri`.
+   */
   public login(): void {
     this.setToken();
     window.location.href = `https://oauth2.sky.blackbaud.com/authorization?client_id=
@@ -57,9 +51,8 @@ export class SessionService {
   }
 
   /**
-  *  Makes use of the router we created in our constructor function to navigate the browser to `/home` before we call for the window
-  *  to perform a refresh/reload to clear out any cached data that may still be hanging around.
-  */
+   *  Directs the browser to the home route and calls for the window to perform a refresh/reload to clear out any cached data.
+   */
   public logout() {
     this.setToken();
     this.router.navigate(['/home']);
@@ -67,10 +60,10 @@ export class SessionService {
   }
 
   /**
-  *  setToken takes an optional (?) obj parameter. If no parameter is provided, it will remove any `token` that may
-  *  be in the sessionStorage. If a valid token is provided, it will stringify the token object and save it
-  *  in the window's sessionStorage.
-  */
+   *  setToken takes an optional (?) obj parameter. If no parameter is provided, it will remove any `token` that may
+   *  be in the sessionStorage. If a valid token is provided, it will stringify the token object and save it
+   *  in the window's sessionStorage.
+   */
   public setToken(obj?: Object) {
     if (!obj) {
       window.sessionStorage.removeItem('token');
