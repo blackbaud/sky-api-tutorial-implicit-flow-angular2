@@ -36,7 +36,7 @@ export class ConstituentService {
      *  and pass in the values we need.
      */
     let headers = new Headers({
-      'bb-api-subscription-key': "a49d639fd78b4478a26ab677c14878fa",
+      'bb-api-subscription-key': this.settingsService.get('SkyApiSubscriptionKey'),
       'Authorization': 'Bearer ' + this.sessionService.getAccessToken()
     });
 

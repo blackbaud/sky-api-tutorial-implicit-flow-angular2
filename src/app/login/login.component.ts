@@ -3,7 +3,10 @@ import { SessionService } from '../../shared/session.service';
 
 @Component({
   selector: 'login',
-  template: require('./login.component.html')
+  template: require('./login.component.html'),
+  styles: [`button {
+    margin-top: 10px;
+  }`]
 })
 export class LoginComponent {
   constructor (
