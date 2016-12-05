@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 
 /**
- *  Pulls in the rxjs toPromise method so that HTTP requests can be use Promises.
+ *  Pulls in the rxjs toPromise method so that HTTP requests can use Promises.
  *    NOTE: Angular 2 supports the use of observables, but we use Promises for simplicity.
  */
 import 'rxjs/add/operator/toPromise';
