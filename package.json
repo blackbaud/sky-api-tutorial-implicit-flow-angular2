@@ -29,6 +29,7 @@
     "@types/jasmine": "2.5.38",
     "@types/node": "6.0.45",
     "@types/webpack": "^2.0.0",
+    "angular2-router-loader": "^0.3.4",
     "angular2-template-loader": "0.6.0",
     "awesome-typescript-loader": "2.2.4",
     "blackbaud-skyux2": "2.0.0-alpha.13",
