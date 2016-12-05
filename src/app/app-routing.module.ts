@@ -9,7 +9,7 @@ import { TokenComponent } from './token/token.component';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'access_token/:token', component: TokenComponent },
+  { path: 'oauth2/callback/:token', component: TokenComponent },
   { path: '**', redirectTo: '/' }
 ];
 
