@@ -1,8 +1,14 @@
+<!-- SKY UX 2 summary component -->
 <sky-page-summary>
   <sky-page-summary-image>
     <sky-avatar [name]="constituent?.name"></sky-avatar>
   </sky-page-summary-image>
   <sky-page-summary-title>
+      <!--
+        The Elvis operator `?` tells Angular that this value may not exist yet when the view renders.
+        When dealing with asynchronous data, Angular 2 doesn't allow us to block
+        the view from rendering, and an error occurs without this conditional operator.
+       -->
       {{constituent?.name}}
   </sky-page-summary-title>
   <sky-page-summary-subtitle>
