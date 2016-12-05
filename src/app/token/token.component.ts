@@ -29,7 +29,6 @@ export class TokenComponent implements OnInit {
      */
     this.hash = window.location.hash.substr(1);
     this.hashArray = this.hash.split('&');
-
     this.hashArray.forEach((hash) => {
       let obj = hash.split('=');
       /**

@@ -4,12 +4,12 @@ import { HomeComponent } from './home/home.component';
 import { TokenComponent } from './token/token.component';
 
 /**
- *  Creates an array of route configuration objects. For example, at the path 'home', tells the router to use the HomeComponent.)
+ *  Creates an array of route configuration objects. For example, at the path 'home', tells the router to use the HomeComponent.
  */
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
-  { path: 'access_token/:token', component: TokenComponent },
+  { path: 'oauth2/callback/:token', component: TokenComponent },
   { path: '**', redirectTo: '/' }
 ];
 
