@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 
 /**
- *  Pulls in the rxjs toPromise method so the http requests can be use Promises.
- *    NOTE: Angular 2 supports the use of observables, though for this guide we chose
- *          to use Promises for simplicity.
+ *  Pulls in the rxjs toPromise method so that HTTP requests can use Promises.
+ *    NOTE: Angular 2 supports the use of observables, but we use Promises for simplicity.
  */
 import 'rxjs/add/operator/toPromise';
 
@@ -18,7 +17,7 @@ export class ConstituentService {
   constructor(
 
     /**
-     * Pulls in the Http service provided from @angular/http. So this service has access to the http methods.
+     * Pulls in the Http service from the @angular/http library to provide access to the HTTP methods.
      */
     private http: Http,
     private sessionService: SessionService,
@@ -27,13 +26,13 @@ export class ConstituentService {
   public getById(id: number): Promise<any> {
 
     /**
-     *  The SKY API endpoints require a header is sent along with all requests. The header
-     *  must contain a `bb-api-subscription-key` from the config file and an `Authorization` key.
-     *  the `Authorization` key's value must start with the string Bearer followed by a space, and
-     *  then the token users receive when they are authenticated.
+     *  The SKY API endpoints require a header with all requests. The header must contain 
+     *  the `bb-api-subscription-key` property from the config file and an `Authorization` key.
+     *  the `Authorization` key's value must start with the string 'Bearer' followed by a space and
+     *  then the token that users receive when they authenticate.
      *
-     *  To attach a header to `GET` requests, we make use of the Headers and Options constructors
-     *  from the @angular/http library.  We create our variables as `new` instances of these constructors
+     *  To attach a header to `GET` requests, we use the Headers and Options constructors
+     *  from the @angular/http library. We create our variables as `new` instances of these constructors
      *  and pass in the values we need.
      */
     let headers = new Headers({
@@ -42,15 +41,15 @@ export class ConstituentService {
     });
 
     /**
-     *  New RequestOptions formats the header object in a way that allows http to attach it to the http request.
+     *  New RequestOptions formats the header object in a way that allows HTTP to attach the header to the HTTP request.
      */
     let options = new RequestOptions({ headers: headers });
 
     if (this.sessionService.isAuthenticated()) {
 
       /**
-      *  `GET` requests can't contain data like the other http methods. So the formatted `options` variable needs to be passed in 
-      *  as the second parameter to the `GET` request. Without these headers, SKY API will not be able to authenticate the request.
+      *  `GET` requests can't contain data like the other HTTP methods. So the formatted `options` variable needs to be passed in 
+      *  as the second parameter to the `GET` request. Without these headers, SKY API cannot authenticate the request.
       */
       return this.http.get(this.url + id, options)
         .toPromise()

@@ -20,7 +20,7 @@ import { LoginComponent } from './login/login.component';
 import { TokenComponent } from './token/token.component';
 
 /**
- * Registers the core app module and loads in the other components, providers (services), and dependencies.
+ * Registers the core app module and loads the other components, providers (services), and dependencies.
  */
 @NgModule({
   imports: [

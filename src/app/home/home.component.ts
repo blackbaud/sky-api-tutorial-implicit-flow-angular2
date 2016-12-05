@@ -7,23 +7,23 @@ import { SessionService } from '../../shared/session.service';
 })
 export class HomeComponent implements OnInit {
   /**
-  *  Define our public variable isAuthenticated that we use as part of the *ngIf
+  *  Defines our public variable isAuthenticated to use as part of the *ngIf
   *  in our template. We give this variable a type of boolean so we know what
   *  type of value is assigned.
   */
   public isAuthenticated: boolean;
 
   /**
-  *  Here we pull in and create our sessionService based on the SessionService class we imported.
+  *  Pulls in and creates our sessionService based on the SessionService class that we imported.
   */
   constructor(
     private sessionService: SessionService) { }
 
   /**
-  *  On initialization we call the sessionService we created in our constructor and make use
-  *  of its isAuthenticated method. This method will return a boolean value based on whether
+  *  On initialization, calls the sessionService we created in our constructor and uses
+  *  its isAuthenticated method. This method returns a boolean value based on whether
   *  users are logged in or not. It then assigns that returned boolean to the public isAuthenticated
-  *  variable we defined above.
+  *  variable that we defined above.
   */
   public ngOnInit(): void {
     this.isAuthenticated = this.sessionService.isAuthenticated();

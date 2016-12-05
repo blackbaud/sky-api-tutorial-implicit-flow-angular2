@@ -4,8 +4,8 @@ import { SettingsService } from './settings.service';
 import { Token } from './token.interface';
 
 /**
- *  The Injectable decorator provides the metadata for the SessionService so Angular 2 recognizes this 
- *  as a service / provider that other components and modules use.
+ *  The Injectable decorator provides metadata for SessionService so Angular 2 recognizes this 
+ *  as a service/provider that other components and modules use.
  */
 @Injectable()
 export class SessionService {
@@ -37,10 +37,10 @@ export class SessionService {
   }
 
   /**
-   *  Calls the setToken method with no parameters to clear out any existing `token` that may be in sessionStorage already.
-   *  Next it sets the window's location to the Blackbaud authorization url and fetches in the `SkyApiAppId` and `AuthRedirectUri`
-   *  variables set in the config file. The browser is redirected to the authorization location and upon success is
-   *  redirected to the specified `AuthRedirectUri`.
+   *  Calls the setToken method with no parameters to clear out any existing `token` in sessionStorage.
+   *  Next, sets the window's location to the Blackbaud authorization URL and fetches the `SkyApiAppId` and `AuthRedirectUri`
+   *  variables from the config file. The browser redirects to the authorization location and then upon success,
+   *  redirects to the specified `AuthRedirectUri`.
    */
   public login(): void {
     this.setToken();
@@ -60,7 +60,7 @@ export class SessionService {
   }
 
   /**
-   *  setToken takes an optional (?) obj parameter. If no parameter is provided, it will remove any `token` that may
+   *  setToken takes an optional obj? parameter. If no parameter is provided, it will remove any `token` that may
    *  be in the sessionStorage. If a valid token is provided, it will stringify the token object and save it
    *  in the window's sessionStorage.
    */
